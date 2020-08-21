@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Results</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/result.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+</head>
+<body>
+<div class="jumbotron first">
+    <div class="form-group">
+<div class="row">
+            <div class="col-md-2">
+            <img src="img/arrow.png" height="20" width="20" onclick="location.href='home.php'" style="position: absolute; top: 1rem; left: 2.5rem;"> 
+        </div>
+            <br>
+    <br>
+        <div class="col-md-10" style="margin-top: 6px;">
+            <input type="text" name="" class="form-control" placeholder="Results..." id="myInput" onkeyup="myFunction()">
+        </div>
+</div>
+    </div>
+
+    <h1>Results</h1>
+</div>
+<div class="container">
+    <p style="padding: 20px 20px 20px 20px; color: #4834d4; font-family:'Poppins', sans-serif; font-weight: bolder; ">Name</p>
+    <div>
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <ul class="list-group" style="margin-top: -1rem;" id="myUL">
+        <li class="list-group-item"><a href="#"><img src="img/folder.png" height="30" width="30" /> 1st Term examination report</a></li>
+        <li class="list-group-item"><a href="#"><img src="img/folder.png" height="30" width="30" /> Weekly reports</a></li>
+        <li class="list-group-item"><a href="#"><img src="img/folder.png" height="30" width="30" /> Weekly reports</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+    </div>
+</div>
+<script type="text/javascript">
+    function myFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+</script>
+</body>
+</html>
